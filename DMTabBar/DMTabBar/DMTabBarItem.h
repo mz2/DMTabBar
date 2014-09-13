@@ -16,8 +16,6 @@
 @property (nonatomic,strong)    NSString*   toolTip;                        // Tool tip message
 @property (nonatomic,assign)    NSUInteger  tag;                            // Tag of the item
 @property (nonatomic,assign)    NSInteger   state;                          // Current state (NSOnState = selected)
-@property (nonatomic,assign)    NSUInteger  keyEquivalentModifierMask;
-@property (nonatomic,copy)      NSString*   keyEquivalent;
 
 // Internal use
 // We'll use a customized NSButton (+NSButtonCell) and apply it inside the bar for each item.
