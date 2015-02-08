@@ -30,6 +30,8 @@ typedef void (^DMTabBarEventsHandler)(DMTabBarItemSelectionType selectionType, D
 // change selected item by passing a DMTabBarItem object (ignored if selectedTabBarItem is not contained inside tabBarItems)
 @property (nonatomic,assign) DMTabBarItem*      selectedTabBarItem;
 
+- (IBAction)selectTabBarItem:(id)sender;
+
 // change selected item by passing a new index { 0 < index < tabBarItems.count }
 @property (nonatomic,assign) NSUInteger         selectedIndex;
 
