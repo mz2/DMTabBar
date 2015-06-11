@@ -81,7 +81,7 @@
         [_borderColor setStroke];
         [NSBezierPath setDefaultLineWidth:0.0f];
         [NSBezierPath strokeLineFromPoint:NSMakePoint(NSMinX(self.bounds), NSMaxY(self.bounds))
-                                  toPoint:NSMakePoint(NSMaxX(self.bounds), NSMaxY(self.bounds))];
+                                  toPoint:NSMakePoint(NSMaxX(self.bounds) + 20, NSMaxY(self.bounds))];
     }
 }
 
