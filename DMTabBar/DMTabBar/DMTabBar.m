@@ -128,12 +128,17 @@
 }
 
 - (void) layoutSubviews {
-    NSUInteger buttonsNumber = [self.tabBarItems count];
-    CGFloat totalWidth = (buttonsNumber*kDMTabBarItemWidth);
+    __block CGFloat totalWidth = 0;
+    [self.tabBarItems enumerateObjectsUsingBlock:^(DMTabBarItem *item, NSUInteger idx, BOOL *stop) {
+        totalWidth += item.itemWidth > 0 ? item.itemWidth : kDMTabBarItemWidth;
+    }];
+    
     __block CGFloat offset_x = floorf((NSWidth(self.bounds)-totalWidth)/2.0f);
     [self.tabBarItems enumerateObjectsUsingBlock:^(DMTabBarItem* tabBarItem, NSUInteger idx, BOOL *stop) {
-        tabBarItem.tabBarItemButton.frame = NSMakeRect(offset_x, NSMinY(self.bounds), kDMTabBarItemWidth, NSHeight(self.bounds));
-        offset_x += kDMTabBarItemWidth;
+        CGFloat itemWidth = tabBarItem.itemWidth > 0 ? tabBarItem.itemWidth : kDMTabBarItemWidth;
+        tabBarItem.tabBarItemButton.frame = NSMakeRect(offset_x, NSMinY(self.bounds),
+                                                       itemWidth, NSHeight(self.bounds));
+        offset_x += itemWidth;
     }];
 }
 

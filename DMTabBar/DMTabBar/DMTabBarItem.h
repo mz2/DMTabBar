@@ -17,13 +17,15 @@
 @property (nonatomic,assign)    NSUInteger  tag;                            // Tag of the item
 @property (nonatomic,assign)    NSInteger   state;                          // Current state (NSOnState = selected)
 
+@property CGFloat itemWidth;
+
 // Internal use
 // We'll use a customized NSButton (+NSButtonCell) and apply it inside the bar for each item.
 // You should never access to this element, but only with the DMTabBarItem istance itself.
 @property (nonatomic,readonly)  NSButton*   tabBarItemButton;
 
 // Init methods
-+ (DMTabBarItem *) tabBarItemWithIcon:(NSImage *) iconImage tag:(NSUInteger) itemTag;
-- (id)initWithIcon:(NSImage *) iconImage tag:(NSUInteger) itemTag;
++ (DMTabBarItem *) tabBarItemWithTitle:(NSString *)title icon:(NSImage *)iconImage tag:(NSUInteger) itemTag;
+- (instancetype)initWithTitle:(NSString *)title icon:(NSImage *) iconImage tag:(NSUInteger) itemTag;
 
 @end
