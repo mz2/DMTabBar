@@ -11,11 +11,10 @@
 
 @interface DMTabBarItem : NSButtonCell { }
 
-@property (nonatomic,assign)    BOOL        enabled;                        // YES or NO to enable or disable the item
-@property (nonatomic,strong)    NSImage*    icon;                           // That's the image of the item
-@property (nonatomic,strong)    NSString*   toolTip;                        // Tool tip message
-@property (nonatomic,assign)    NSUInteger  tag;                            // Tag of the item
-@property (nonatomic,assign)    NSInteger   state;                          // Current state (NSOnState = selected)
+@property (assign, getter=isEnabled)    BOOL        enabled;                        // YES or NO to enable or disable the item
+@property (strong)                      NSImage*    icon;                           // That's the image of the item
+@property (strong)                      NSString*   toolTip;                        // Tool tip message
+@property (assign)                      NSInteger   tag;                            // Tag of the item
 
 @property CGFloat itemWidth;
 
