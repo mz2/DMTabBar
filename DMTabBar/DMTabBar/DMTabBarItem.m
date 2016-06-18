@@ -89,11 +89,11 @@ static CGFloat kDMTabBarItemGradientColor_Locations[] =     {0.0f, 0.5f, 1.0f};
     return tabBarItemButton.toolTip;    
 }
 
-- (void) setKeyEquivalentModifierMask:(NSUInteger)newKeyEquivalentModifierMask {
+- (void)setKeyEquivalentModifierMask:(NSEventModifierFlags)newKeyEquivalentModifierMask {
     tabBarItemButton.keyEquivalentModifierMask = newKeyEquivalentModifierMask; 
 }
 
-- (NSUInteger) keyEquivalentModifierMask {
+- (NSEventModifierFlags)keyEquivalentModifierMask {
     return tabBarItemButton.keyEquivalentModifierMask; 
 }
 
